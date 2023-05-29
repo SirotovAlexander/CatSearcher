@@ -6,3 +6,17 @@
 .error {
   visibility: hidden;
 }
+
+.cat-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cat-info__wrapper {
+  max-width: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
