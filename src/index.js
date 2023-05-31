@@ -5,7 +5,7 @@ import { createSelectOptions } from './js/createSelect';
 const select = document.querySelector('.breed-select');
 const infoContainer = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
-const error = document.querySelector('.error');
+const errorMassage = document.querySelector('.error');
 
 // console.dir(infoContainer);
 
@@ -31,3 +31,5 @@ function onSelect(event) {
 }
 
 export { select };
+export { loader };
+export { errorMassage };

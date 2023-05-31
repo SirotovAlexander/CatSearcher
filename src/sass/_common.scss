@@ -7,6 +7,22 @@
   visibility: hidden;
 }
 
+.error__on {
+  visibility: visible;
+  color: red;
+  font-size: larger;
+}
+
+.loader__on {
+  visibility: visible;
+  color: red;
+  font-size: larger;
+}
+
+.select__wait {
+  visibility: hidden;
+}
+
 .cat-info {
   display: flex;
   align-items: flex-start;
