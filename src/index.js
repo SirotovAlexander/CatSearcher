@@ -14,6 +14,9 @@ select.addEventListener('change', onSelect);
 createSelectOptions();
 
 function onSelect(event) {
+  infoContainer.innerHTML = '';
+  select.classList.add('select__wait');
+  loader.classList.add('loader__on');
   fetchCatByBreed(event.target.value)
     .then(data => {
       const markup = `<img src="${data[0].url}" alt="${data[0].breeds[0].name}" width="500" height="500">
@@ -22,10 +25,14 @@ function onSelect(event) {
       <p>${data[0].breeds[0].description}</p>
       <span>${data[0].breeds[0].temperament}</span>
       </div>`;
-
+      loader.classList.remove('loader__on');
+      select.classList.remove('select__wait');
       infoContainer.innerHTML = markup;
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      errorMassage.classList.add('error__on');
+    });
 
   //   console.log(event.target.value);
 }

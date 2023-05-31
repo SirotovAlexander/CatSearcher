@@ -22,6 +22,7 @@ async function createSelectOptions() {
     select.classList.remove('select__wait');
   } catch (error) {
     console.log(error);
+    errorMassage.classList.add('error__on');
   }
 }
 
