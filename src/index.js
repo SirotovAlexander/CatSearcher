@@ -21,12 +21,15 @@ function onSelect(event) {
   loader.classList.add('loader__on');
   fetchCatByBreed(event.target.value)
     .then(data => {
-      const markup = `<img src="${data[0].url}" alt="${data[0].breeds[0].name}" width="500" height="500">
-        <div class='cat-info__wrapper'>
-      <h2>${data[0].breeds[0].name}</h2>
-      <p>${data[0].breeds[0].description}</p>
-      <span>${data[0].breeds[0].temperament}</span>
-      </div>`;
+      const markup = `<article class="cta">
+	<img src='${data[0].url}' alt="${data[0].breeds[0].name}">
+	<div class="cta__text-column">
+		<h2>${data[0].breeds[0].name}</h2>
+		<p>${data[0].breeds[0].description}</p>
+		<a href="${data[0].breeds[0].vetstreet_url}" target="_blank">Read all about it</a>
+	</div>
+</article>`;
+      console.log(data);
       loader.classList.remove('loader__on');
 
       select.classList.remove('select__wait');
@@ -41,3 +44,10 @@ function onSelect(event) {
 export { select };
 export { loader };
 export { errorMassage };
+
+// markup = `<img src="${data[0].url}" alt="${data[0].breeds[0].name}" width="500" height="500">
+//         <div class='cat-info__wrapper'>
+//       <h2>${data[0].breeds[0].name}</h2>
+//       <p>${data[0].breeds[0].description}</p>
+//       <span>${data[0].breeds[0].temperament}</span>
+//       </div>`;
